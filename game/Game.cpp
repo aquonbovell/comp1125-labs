@@ -92,20 +92,22 @@ int Game::stringToStatus(std::string status)
 
 int Game::levelToHints(enum Level level)
 {
+	int hints;
 	switch (level)
 	{
 	case Level::ROOKIE:
-		return getRookieHint();
+		hints = getRookieHint();
 		break;
 	case Level::TUFFTONG:
-		return getTuffTongHint();
+		hints = getTuffTongHint();
 		break;
 	case Level::HARDSEED:
-		return getHardSeedHint();
+		hints = getHardSeedHint();
 		break;
 	default:
 		break;
 	}
+	return hints;
 }
 
 int Game::getRookieHint() const { return rookiehint; };

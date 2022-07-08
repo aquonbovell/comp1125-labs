@@ -187,7 +187,7 @@ int main()
 								default:
 									std::cout << "No selection available" << std::endl;
 									isInvalidNumber = true;
-									std::cout << "There is no option for your selection.\nRetry please";
+									std::cout << "There is no option for your selection.\nRetry please" << std::endl;
 									break;
 								}
 							} while (isInvalidNumber);
@@ -203,7 +203,7 @@ int main()
 						default:
 							std::cout << "No selection available" << std::endl;
 							isInvalidColumnNumber = true;
-							std::cout << "There is no option for your selection.\nRetry please";
+							std::cout << "There is no option for your selection.\nRetry please" << std::endl;
 							break;
 						}
 					} while (isInvalidColumnNumber); // col num
@@ -218,7 +218,7 @@ int main()
 				default:
 					std::cout << "No selection available" << std::endl;
 					isInvalidRowNumber = true;
-					std::cout << "There is no option for your selection.\nRetry please";
+					std::cout << "There is no option for your selection.\nRetry please" << std::endl;
 					break;
 				}
 			} while (isInvalidRowNumber);									// continues if the row number is not 1-5 or 10
