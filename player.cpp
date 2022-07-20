@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player::Player(std::string playername, int Age) : name{playername}, age{Age} {};
+Player::Player(std::string playername, int Age) : name{ playername }, age{ Age } {};
 
 std::string Player::getName() const { return name; };
 

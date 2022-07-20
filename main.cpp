@@ -1,5 +1,5 @@
-#include <iostream>
 #include "Game.h"
+#include <iostream>
 
 int main()
 {
@@ -21,7 +21,13 @@ int main()
 		do
 		{
 			std::cout << "Enter the level you would like to play: >> ";
-			std::getline(std::cin >> std::ws, level);
+			std::getline(std::cin, level);
+			
+			if (std::cin.fail())
+			{
+				std::cin.clear();
+			}
+			
 			switch (game.stringToLevel(level))
 			{
 			case 1:
@@ -70,6 +76,10 @@ int main()
 				// loops until the correct number is entered
 				std::cout << "Enter a row number: >> ";
 				std::getline(std::cin, row_number);
+				if (std::cin.fail())
+				{
+					std::cin.clear();
+				}
 				row_num = game.stringToInt(row_number);
 				row_num--;
 				switch (row_num)
@@ -85,6 +95,10 @@ int main()
 					{
 						std::cout << "Enter a column number: >> ";
 						std::getline(std::cin, column_number);
+						if (std::cin.fail())
+							{
+								std::cin.clear();
+							}
 						column_num = game.stringToInt(column_number);
 						column_num--;
 						switch (column_num)
@@ -100,8 +114,11 @@ int main()
 							{
 								std::cout << "Enter a number: >> ";
 								std::getline(std::cin, number);
+								if (std::cin.fail())
+									{
+										std::cin.clear();
+									}
 								num = game.stringToInt(number);
-
 								switch (num)
 								{
 								case 1:
@@ -134,6 +151,10 @@ int main()
 										{
 											std::cout << "Do you want a hint or do you want to quit or continue? (h/q/c) >> ";
 											std::getline(std::cin, requesthint);
+											if (std::cin.fail())
+											{
+												std::cin.clear();
+											}
 											switch (game.stringToStatus(requesthint))
 											{
 											case 1:
@@ -167,6 +188,7 @@ int main()
 												break;
 											case 3:
 												std::cout << "Continuing..." << std::endl;
+												game.status = game.Status::CONTINUE;
 												break;
 											default:
 												std::cout << "No selection available" << std::endl;
@@ -232,6 +254,10 @@ int main()
 			std::string endgame;
 			std::cout << "Would you like to play another game: >> ";
 			std::getline(std::cin, endgame);
+			if (std::cin.fail())
+			{
+				std::cin.clear();
+			}
 			std::cout << std::endl;
 
 			switch (game.stringToEndgame(endgame))

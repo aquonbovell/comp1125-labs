@@ -166,14 +166,14 @@ void Game::createGame()
 {
 	srand(time(NULL));
 
-	for (size_t i = 0; i < solutionArray.size(); i++)
+	for (size_t i = 0; i < solutionArray.size(); ++i)
 	{
 	repeat:
-		for (size_t j = 0; j < solutionArray.size(); j++)
+		for (size_t j = 0; j < solutionArray.size(); ++j)
 		{
 			solutionArray[i][j] = rand() % colums + 1;
 
-			for (size_t h = 0; h < j; h++)
+			for (size_t h = 0; h < j; ++h)
 			{
 				while (solutionArray[i][j] == solutionArray[i][h])
 				{
@@ -181,7 +181,7 @@ void Game::createGame()
 					goto repeat;
 				}
 			}
-			for (size_t k = 0; k < i; k++)
+			for (size_t k = 0; k < i; ++k)
 			{
 				while (solutionArray[i][j] == solutionArray[k][j])
 				{
@@ -195,9 +195,9 @@ void Game::createGame()
 
 void Game::createCopy()
 {
-	for (size_t i = 0; i < rows; i++)
+	for (size_t i = 0; i < colums; ++i)
 	{
-		for (size_t j = 0; j < rows; j++)
+		for (size_t j = 0; j < colums; ++j)
 		{
 			playerArray[i][j] = solutionArray[i][j];
 		}
@@ -338,7 +338,7 @@ void Game::endGameMessage()
 		std::cout << "| ";
 		for (auto const &element : row)
 		{
-			std::cout << (element == 0 ? 'X' : element) << " | ";
+			std::cout << element << " | ";
 		}
 		std::cout << std::endl
 							<< "-------------------------" << std::endl;

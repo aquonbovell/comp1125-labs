@@ -8,8 +8,7 @@ class Game : public Player
 {
 public:
 	static const int colums{6};
-	static const int rows{6};
-	std::array<std::array<int, colums>, rows> playerArray;
+	std::array<std::array<int, colums>, colums> playerArray;
 
 	enum Status
 	{
@@ -27,8 +26,7 @@ public:
 	{
 		ROOKIE,
 		TUFFTONG,
-		HARDSEED,
-		NO
+		HARDSEED
 	};
 	Level level;
 
@@ -79,6 +77,6 @@ public:
 
 private:
 	int score, tufftonghint, hardseedhint, rookiehint;
-	std::array<std::array<int, colums>, rows> solutionArray;
+	std::array<std::array<int, colums>, colums> solutionArray;
 };
 #endif
