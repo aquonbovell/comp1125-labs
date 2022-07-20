@@ -12,3 +12,5 @@ For the rookie level, the algorithm will randomly remove 10 slots from the puzzl
 - 3 hints for a hard seed
 
 Each requested hint places one number in a cell on the puzzle at random. Each hint requested results in a 2**n point (where n is the number of hints requested) deduction from the 20 points you were given at the start. 
+
+Closed: July 20th, 2021
